@@ -7,20 +7,18 @@
 'use strict'
 
 function calculate() {
-  // input
-  const age = document.getElementById("age").value;
-  const tuesday = document.getElementById("tuesday").checked;
-  const thursday = document.getElementById("thursday").checked;
+
+ // input
+  let firstNumber = parseFloat(document.getElementById("numberone").value)
+  const secondNumber = parseFloat(document.getElementById("numbertwo").value)
+  let answer = 0
 
   // process
-    if (tuesday || thursday || (age >= 12 && age <=21)) {
-    // output
-    document.getElementById("results").innerHTML =
-      "<p>You can recieve a student discount.</p>";
+  while (firstNumber >= 1) {
+    answer = answer + secondNumber
+  firstNumber = firstNumber - 1;
   }
-
-  else {
-    document.getElementById("results").innerHTML =
-      "<p>You have to pay regular price.</p>";
-  }
+  // output
+  document.getElementById("results").innerHTML =
+  'The number is: ' + answer
 }
