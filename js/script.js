@@ -6,19 +6,40 @@
 
 'use strict'
 
-function calculate() {
+// Load saved input values when page loads
+function loadSavedInputs() {
+  const savedNumberOne = localStorage.getItem("numberone")
+  const savedNumberTwo = localStorage.getItem("numbertwo")
 
- // input
-  let firstNumber = parseFloat(document.getElementById("numberone").value)
-  const secondNumber = parseFloat(document.getElementById("numbertwo").value)
+  if (savedNumberOne !== null) {
+    document.getElementById("numberone").value = savedNumberOne
+  }
+
+  if (savedNumberTwo !== null) {
+    document.getElementById("numbertwo").value = savedNumberTwo
+  }
+}
+
+function calculate() {
+  // input
+  const firstNumberInput = document.getElementById("numberone").value
+  const secondNumberInput = document.getElementById("numbertwo").value
+
+  // Save inputs
+  localStorage.setItem("numberone", firstNumberInput)
+  localStorage.setItem("numbertwo", secondNumberInput)
+
+  let firstNumber = parseFloat(firstNumberInput)
+  const secondNumber = parseFloat(secondNumberInput)
   let answer = 0
 
   // process
   while (firstNumber >= 1) {
     answer = answer + secondNumber
-  firstNumber = firstNumber - 1;
+    firstNumber = firstNumber - 1
   }
+
   // output
   document.getElementById("results").innerHTML =
-  'The number is: ' + answer
+    'The number is: ' + answer
 }

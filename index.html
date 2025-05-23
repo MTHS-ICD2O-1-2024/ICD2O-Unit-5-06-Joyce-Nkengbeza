@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content=">Multiplication with while loops, with JS" />
+  <meta name="description" content="Multiplication with while loops, with JS" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Joyce Nkengbeza" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,50 +18,52 @@
   <title>Multiplication with while loops, with JS</title>
 </head>
 
-<body>
+<body onload="loadSavedInputs()">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script src="./js/script.js"></script>
+
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Multiplication with while loops, with JS</span>
       </div>
     </header>
+
     <main class="mdl-layout__content">
       <div class="right-image">
         <img src="./images/mul.jpg" alt="Multiplication" />
       </div>
+
       <div class="page-content">Multiplication with while loops, with JS</div>
       <br />
+
       <form>
         <br />
-        <!-- Numeric Textfield -->
         Enter the first number
         <br />
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numberone" />
           <label class="mdl-textfield__label" for="numberone">enter number...</label>
-          <!-- class "mdl-textfield__error" -->
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
         <br />
-        <!-- Numeric Textfield -->
+
         Enter the second number
         <br />
         <div class="mdl-textfield mdl-js-textfield">
           <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="numbertwo" />
           <label class="mdl-textfield__label" for="numbertwo">enter number...</label>
-          <!-- class "mdl-textfield__error" -->
           <span class="mdl-textfield__error">Input is not a number!</span>
         </div>
         <br />
-        <!-- Accent-colored raised button with ripple -->
+
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
           onclick="calculate()" type="button">
           Calculate
         </button>
       </form>
       <br />
+
       <div class="page-content-answer">
         <div id="results"></div>
       </div>
